@@ -58,10 +58,10 @@
 |-------------------- |---------------------|-------------------------|
 | postal_code         | string              | null: false             |
 | shipping_area_id    | integer             | null: false             |
-| town                | string              |                         |
+| town                | string              | null: false             |
+| building_name       | string              |                         |
 | address             | string              | null: false             |
 | phone               | string              | null: false             |
-| value               | string              | null: false             |
 | buy                 | references          | foreign_key: true       |
 
 ### Association
