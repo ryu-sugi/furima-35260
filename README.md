@@ -11,7 +11,7 @@
 | last_name_furigana  | string              | null: false              |
 | email               | string              | null: false,unique: true |
 | encrypted_password  | string              | null: false              |
-| birth date          | date                | null: false              |
+| birth_date          | date                | null: false              |
 
 ### Association
 
@@ -57,13 +57,12 @@
 | Column              | Type                | Options                 |          
 |-------------------- |---------------------|-------------------------|
 | postal_code         | string              | null: false             |
-| division            | string              | null: false             |
+| shipping_area_id    | integer             | null: false             |
 | town                | string              |                         |
 | address             | string              | null: false             |
 | phone               | string              | null: false             |
 | value               | string              | null: false             |
 | buy                 | references          | foreign_key: true       |
-| shipping_area_id    | integer             | null: false             |
 
 ### Association
 
