@@ -1,0 +1,97 @@
+<mxfile>
+    <diagram id="SYEl7PSuo9IDq5mlb7Oi" name="ページ1">
+        <mxGraphModel dx="1520" dy="491" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="　users テーブル" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="-30" y="30" width="350" height="170" as="geometry"/>
+                </mxCell>
+                <mxCell id="uyFYTrAPoLMAyDlFunJu-29" value="ー nickname (string型,NOT NULL)&#10;ー first_name (string型,NOT NULL)&#10;ー last_name (string型,NOT NULL)&#10;ー first_name_furigana (string型,NOT NULL)&#10;ー last_name_furigana  (string型,NOT NULL)&#10;ー email (string型,NOT NULL)&#10;ー password (string型,NOT NULL)&#10;ー birth date (integer型,NOT NULL)&#10;" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="2" vertex="1">
+                    <mxGeometry y="30" width="350" height="140" as="geometry"/>
+                </mxCell>
+                <mxCell id="uyFYTrAPoLMAyDlFunJu-45" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="2" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="350" y="105" as="sourcePoint"/>
+                        <mxPoint x="350" y="105" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="6" value="buys テーブル" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="-440" y="240" width="360" height="230" as="geometry"/>
+                </mxCell>
+                <mxCell id="uyFYTrAPoLMAyDlFunJu-42" value="ー item (string型,NOT NULL)&#10;ー nickname (string型,NOT NULL)&#10;ー first_name (string型,NOT NULL)&#10;ー last_name (string型,NOT NULL)&#10;ー first_name_furigana (string型,NOT NULL)&#10;ー last_name_furigana (string型,NOT NULL)&#10;ー postal_code (inteher型,NOT NULL)&#10;ー division (string型,NOT NULL)&#10;ー town (string型,NOT NULL)&#10;ー address (integer型,NOT NULL)&#10;ー phone (integer型,NOT NULL)&#10;ー value (integer型,NOT NULL)&#10;ー users_id&#10;" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="6" vertex="1">
+                    <mxGeometry y="30" width="360" height="200" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="itemes テーブル" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="400" y="230" width="360" height="210" as="geometry"/>
+                </mxCell>
+                <mxCell id="uyFYTrAPoLMAyDlFunJu-36" value="ー item (string型,NOT NULL)&#10;ー item_image（Active storageで実装）&#10;ー category (text型,NOT NULL)&#10;ー value  (integer型,NOT NULL)&#10;ー description(text型,NOT NULL)&#10;ー condition (string型,NOT NULL)&#10;ー shipping_area (string型,NOT NULL)&#10;ー shipping_day (string型,NOT NULL)&#10;ー users_id" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="8" vertex="1">
+                    <mxGeometry y="30" width="360" height="180" as="geometry"/>
+                </mxCell>
+                <mxCell id="uyFYTrAPoLMAyDlFunJu-47" value="shipping addresses テーブル" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="-40" y="440" width="400" height="200" as="geometry"/>
+                </mxCell>
+                <mxCell id="uyFYTrAPoLMAyDlFunJu-51" value="ー first_name (string型,NOT NULL)&#10;ー last_name (string型,NOT NULL)&#10;ー first_name_furigana (string型,NOT NULL)&#10;ー last_name_furigana  (string型,NOT NULL)&#10;ー postal_code (integer型,NOT NULl)&#10;ー division (string型,NOT NULL)&#10;ー town (string型,NOT NULL)&#10;ー address (string型,NOT NULL)&#10;ー phone  (string型, NOT NULL)&#10;ー value (string型, NOT NULL)&#10;ー users＿iid&#10;&#10;" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="uyFYTrAPoLMAyDlFunJu-47" vertex="1">
+                    <mxGeometry y="30" width="400" height="170" as="geometry"/>
+                </mxCell>
+                <mxCell id="uyFYTrAPoLMAyDlFunJu-60" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="uyFYTrAPoLMAyDlFunJu-47" source="uyFYTrAPoLMAyDlFunJu-51" target="uyFYTrAPoLMAyDlFunJu-51" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="uyFYTrAPoLMAyDlFunJu-58" value="" style="fontSize=12;html=1;endArrow=ERoneToMany;startArrow=ERmandOne;edgeStyle=orthogonalEdgeStyle;elbow=vertical;exitX=-0.01;exitY=-0.011;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.456;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" target="6" edge="1">
+                    <mxGeometry width="100" height="100" relative="1" as="geometry">
+                        <mxPoint x="-30" y="119.66999999999996" as="sourcePoint"/>
+                        <mxPoint x="-276" y="230" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="-276" y="120"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="uyFYTrAPoLMAyDlFunJu-59" value="" style="edgeStyle=orthogonalEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;startArrow=ERmandOne;entryX=0.425;entryY=-0.003;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" target="8" edge="1">
+                    <mxGeometry width="100" height="100" relative="1" as="geometry">
+                        <mxPoint x="320" y="120" as="sourcePoint"/>
+                        <mxPoint x="520" y="120" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="uyFYTrAPoLMAyDlFunJu-61" value="" style="fontSize=12;html=1;endArrow=ERmandOne;startArrow=ERmandOne;exitX=0.405;exitY=-0.014;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.436;entryY=1.001;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="uyFYTrAPoLMAyDlFunJu-47" edge="1" target="uyFYTrAPoLMAyDlFunJu-29">
+                    <mxGeometry width="100" height="100" relative="1" as="geometry">
+                        <mxPoint x="117" y="430" as="sourcePoint"/>
+                        <mxPoint x="122" y="205" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="uyFYTrAPoLMAyDlFunJu-63" value="" style="fontSize=12;html=1;endArrow=ERmandOne;entryX=0.439;entryY=1.016;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" edge="1" target="uyFYTrAPoLMAyDlFunJu-42">
+                    <mxGeometry width="100" height="100" relative="1" as="geometry">
+                        <mxPoint x="-280" y="685" as="sourcePoint"/>
+                        <mxPoint x="-280" y="480" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="uyFYTrAPoLMAyDlFunJu-64" value="" style="endArrow=none;html=1;rounded=0;" parent="1" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="-280" y="680" as="sourcePoint"/>
+                        <mxPoint x="560" y="680" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="uyFYTrAPoLMAyDlFunJu-65" value="" style="fontSize=12;html=1;endArrow=ERmandOne;entryX=0.448;entryY=0.993;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" target="uyFYTrAPoLMAyDlFunJu-36" edge="1">
+                    <mxGeometry width="100" height="100" relative="1" as="geometry">
+                        <mxPoint x="561" y="680" as="sourcePoint"/>
+                        <mxPoint x="590" y="490" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+    <diagram id="aNYOwCyMapcavlJffrzg" name="ページ2">
+        &#xa;
+        <mxGraphModel dx="1426" dy="859" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            &#xa;
+            <root>
+                &#xa;
+                <mxCell id="dnpXf8lpCVybjofe9ce7-0"/>
+                &#xa;
+                <mxCell id="dnpXf8lpCVybjofe9ce7-1" parent="dnpXf8lpCVybjofe9ce7-0"/>
+                &#xa;
+            </root>
+            &#xa;
+        </mxGraphModel>
+        &#xa;
+    </diagram>
+</mxfile>
