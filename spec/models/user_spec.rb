@@ -4,12 +4,14 @@ RSpec.describe User, type: :model do
   before do
     @user = FactoryBot.build(:user)
   end
-
-  describe 'ユーザー新規登録' do
+ describe 'ユーザー新規登録' do
+  context 'ユーザーの新規登録ができる時' do
     it 'nickname、email、passwordとpassword_confirmation、first_name、last_name、first_name_furigana、last_name_furigana, birth_dateが存在すれば登録できる' do
       expect(@user).to be_valid
     end
+   end
     
+  context 'ユーザーの新規登録ができない時' do
     it 'nicknameが空では登録できない' do
       @user.nickname = ''
       @user.valid?
@@ -76,12 +78,12 @@ RSpec.describe User, type: :model do
       @user.first_name = "かな"
       @user.valid?
       expect(@user.errors.full_messages).to include()
-      end
-      it "last_name_furiganaは全角（カタカナ）でなければ登録できない" do
+    end
+    it "last_name_furiganaは全角（カタカナ）でなければ登録できない" do
       @user.last_name_furigana = "かな"
       @user.valid?
       expect(@user.errors.full_messages).to include("Last name furigana is invalid")
-      end
+    end
     it 'emailに@が含まれていなければ登録できない' do
       @user.email = "kkkgmail.com"
       @user.valid?
@@ -94,16 +96,27 @@ RSpec.describe User, type: :model do
       another_user.valid?
       expect(another_user.errors.full_messages).to include('Email has already been taken')
     end
-    it 'passwordが半角英数字混合でななければ登録できない' do
+    it 'passwordが英語のみでは登録できないこと' do
       @user.password = "aaaaaa"
       @user.valid?
       expect(@user.errors.full_messages).to include("Password confirmation doesn't match Password")
     end
+    it 'passwordが数字のみでは登録できないこと' do
+      @user.password = "111111"
+      @user.valid?
+      expect(@user.errors.full_messages).to include("Password confirmation doesn't match Password")
+    end
+    it 'passwordが全角では登録できないこと' do
+      @user.password = "１１１A"
+      @user.valid?
+      expect(@user.errors.full_messages).to include("Password confirmation doesn't match Password")
+    end
     it 'passwordが5文字以下では登録できない' do
-      @user.password = '12345'
-      @user.password_confirmation = '12345'
+      @user.password = '123bc'
+      @user.password_confirmation = '123bc'
       @user.valid?
       expect(@user.errors.full_messages).to include('Password is too short (minimum is 6 characters)')
     end
   end
+ end
 end
