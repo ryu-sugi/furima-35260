@@ -51,7 +51,7 @@
 - belongs_to :item
 - has_one    :shipping_address
 
-## shipping_addresses table
+## shipping_addresses table 
 
 
 | Column              | Type                | Options                 |          
