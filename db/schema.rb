@@ -38,14 +38,14 @@ ActiveRecord::Schema.define(version: 2021_04_27_033352) do
     t.string "encrypted_password", default: "", null: false
     t.string "item", null: false
     t.string "item_image", null: false
-    t.string "category_id", null: false
+    t.integer "category_id", null: false
     t.string "value", null: false
     t.string "description", null: false
-    t.string "condition_id", null: false
-    t.date "shipping_cost_id", null: false
-    t.date "shipping_area_id", null: false
-    t.date "shipping_day_id", null: false
-    t.date "user"
+    t.integer "condition_id", null: false
+    t.integer "shipping_cost_id", null: false
+    t.integer "shipping_area_id", null: false
+    t.integer "shipping_day_id", null: false
+    t.date "user", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
