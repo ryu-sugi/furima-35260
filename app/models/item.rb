@@ -1,7 +1,7 @@
 class Item < ApplicationRecord
 
  with_options presence: true do
-  validates :item
+  validates :item_name
   validates :category_id, numericality: { other_than: 1 }
   validates :value
   validates :description
