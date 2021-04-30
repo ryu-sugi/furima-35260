@@ -9,6 +9,7 @@ class Item < ApplicationRecord
   validates :shipping_cost_id, numericality: { other_than: 1 }
   validates :shipping_area_id, numericality: { other_than: 1 }
   validates :shipping_day_id, numericality: { other_than: 1 }
+  validates :image
  end
 
  belongs_to :user
