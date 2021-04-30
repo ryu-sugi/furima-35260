@@ -1,15 +1,17 @@
 class Item < ApplicationRecord
 
  with_options presence: true do
-  validates :item_name
-  validates :category_id, numericality: { other_than: 1 }
-  validates :value
-  validates :description
-  validates :condition_id, numericality: { other_than: 1 }
-  validates :shipping_cost_id, numericality: { other_than: 1 }
-  validates :shipping_area_id, numericality: { other_than: 1 }
-  validates :shipping_day_id, numericality: { other_than: 1 }
-  validates :image
+   validates :item_name
+   validates :value, format: {with: /\A[0-9]+\z/}, numericality: {only_integer: true, greater_than_or_equal_to: 299, less_than_or_equal_to: 10000000}
+   validates :description
+   validates :image
+  with_options numericality: { other_than: 1 } do
+   validates :category_id
+   validates :condition_id
+   validates :shipping_cost_id
+   validates :shipping_area_id
+   validates :shipping_day_id 
+  end
  end
 
  belongs_to :user

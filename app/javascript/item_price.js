@@ -9,6 +9,5 @@ window.addEventListener('load', () => {
  addTaxDom.innerHTML = Math.floor(inputValue / 10);
  const addProfitDom = document.getElementById("profit");
  addProfitDom.innerHTML = Math.floor(parseInt(inputValue) - parseInt(addTaxDom.innerHTML));
- console.log(inputValue);
  })
 })
