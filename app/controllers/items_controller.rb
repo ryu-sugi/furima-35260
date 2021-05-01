@@ -6,6 +6,7 @@ class ItemsController < ApplicationController
   end
 
   def index
+    @item = Item.all.order("id")
   end
 
   def create
