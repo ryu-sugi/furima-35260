@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :destroy]
-  before_action :item_find_params, only: [:show, :destroy]
-  before_action :move_to_index, only: :destroy
+  before_action :authenticate_user!, only: [:new, :create, :destroy, :edit, :update]
+  before_action :item_find_params, only: [:show, :destroy, :edit, :update]
+  before_action :move_to_index, only: [:destroy, :edit, :update]
 
 
   def new
@@ -29,6 +29,18 @@ class ItemsController < ApplicationController
       redirect_to root_path
     else
       redirect_to action: :show
+    end
+  end
+  
+  def edit
+  end
+
+  def update
+    @item.update(item_params)
+    if @item.save
+      return redirect_to root_path
+    else
+      render :new
     end
   end
 
