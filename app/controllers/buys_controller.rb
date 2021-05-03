@@ -10,12 +10,12 @@ class BuysController < ApplicationController
 
  def create
   @item = Item.find(params[:item_id])
-  @buy_address = buyAddress.new(buy_params)
+  @buy_address = BuyAddress.new(buy_params)
    if @buy_address.valid?
       @buy_address.save
       redirect_to root_path
    else
-      render :new
+      render :index
    end
  end
 

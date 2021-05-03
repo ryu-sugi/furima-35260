@@ -6,6 +6,6 @@ class ShippingAddress < ApplicationRecord
   validates :address
   validates :phone
  end
-  validates :building_name
+ 
   belongs_to :buy
 end
