@@ -3,19 +3,18 @@ class ItemsController < ApplicationController
   before_action :item_find_params, only: [:show, :destroy, :edit, :update]
   before_action :move_to_index, only: [:destroy, :edit, :update]
 
-
   def new
     @item = Item.new
   end
 
   def index
-    @item = Item.all.order("id DESC")
+    @item = Item.all.order('id DESC')
   end
 
   def create
     @item = Item.new(item_params)
     if @item.save
-      return redirect_to root_path
+      redirect_to root_path
     else
       render :new
     end
@@ -31,23 +30,24 @@ class ItemsController < ApplicationController
       redirect_to action: :show
     end
   end
-  
+
   def edit
   end
 
   def update
     @item.update(item_params)
     if @item.save
-      return redirect_to root_path
+      redirect_to root_path
     else
       render :new
     end
   end
 
- private
+  private
 
   def item_params
-   params.require(:item).permit(:item_name, :image, :category_id, :condition_id, :shipping_area_id, :shipping_day_id, :shipping_cost_id, :value, :description).merge(user_id: current_user.id)
+    params.require(:item).permit(:item_name, :image, :category_id, :condition_id, :shipping_area_id, :shipping_day_id,
+                                 :shipping_cost_id, :value, :description).merge(user_id: current_user.id)
   end
 
   def item_find_params
@@ -55,8 +55,6 @@ class ItemsController < ApplicationController
   end
 
   def move_to_index
-    unless current_user.id == @item.user_id
-      redirect_to root_path
-    end
+    redirect_to root_path unless current_user.id == @item.user_id
   end
 end
