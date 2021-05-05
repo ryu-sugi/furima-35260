@@ -2,6 +2,7 @@ class ItemsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :destroy, :edit, :update]
   before_action :item_find_params, only: [:show, :destroy, :edit, :update]
   before_action :move_to_index, only: [:destroy, :edit, :update]
+  before_action :redirect_path, only: [:destroy, :edit, :update]
 
   def new
     @item = Item.new
@@ -32,7 +33,6 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    redirect_to root_path if @item.buy.present?
   end
 
   def update
@@ -49,6 +49,10 @@ class ItemsController < ApplicationController
   def item_params
     params.require(:item).permit(:item_name, :image, :category_id, :condition_id, :shipping_area_id, :shipping_day_id,
                                  :shipping_cost_id, :value, :description).merge(user_id: current_user.id)
+  end
+
+  def redirect_path
+    redirect_to root_path if @item.buy.present?
   end
 
   def item_find_params
