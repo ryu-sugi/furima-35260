@@ -1,4 +1,5 @@
 class BuysController < ApplicationController
+  before_action :authenticate_user!, only: [:index, :create]
   before_action :item_find_params, only: [:index, :create]
   before_action :sold_out_item, only: :index
 
@@ -27,7 +28,7 @@ class BuysController < ApplicationController
   end
 
   def sold_out_item
-    redirect_to root_path if @item.buy.present?
+    redirect_to root_path if @item.buy.present? || current_user == @item.user
   end
 
   def buy_params
@@ -40,8 +41,8 @@ class BuysController < ApplicationController
     Payjp.api_key = ENV['PAYJP_SECRET_KEY']
     Payjp.api_key = 'sk_test_ade063c0925bd21ebc31949c'
     Payjp::Charge.create(
-      amount: @item.value,  # 商品の値段
-      card: buy_params[:token],    # カードトークン
+      amount: @item.value,  
+      card: buy_params[:token],
       currency: 'jpy'
     )
   end
