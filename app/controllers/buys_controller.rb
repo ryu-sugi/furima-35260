@@ -1,13 +1,10 @@
 class BuysController < ApplicationController
-  before_action :authenticate_user!, only: [:index, :create]
-  before_action :item_find_params, only: [:index, :create]
-  before_action :sold_out_item, only: :index
+  before_action :authenticate_user!
+  before_action :item_find_params
+  before_action :sold_out_item
 
   def index
     @buy_address = BuyAddress.new
-  end
-
-  def new
   end
 
   def create
@@ -39,7 +36,6 @@ class BuysController < ApplicationController
 
   def pay_item
     Payjp.api_key = ENV['PAYJP_SECRET_KEY']
-    Payjp.api_key = 'sk_test_ade063c0925bd21ebc31949c'
     Payjp::Charge.create(
       amount: @item.value,  
       card: buy_params[:token],
