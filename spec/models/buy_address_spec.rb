@@ -2,12 +2,12 @@ require 'rails_helper'
 
 RSpec.describe BuyAddress, type: :model do
   describe '商品購入登録' do
-    before do
+     before do
       user = FactoryBot.create(:user)
       item = FactoryBot.create(:item)
       @buy_address = FactoryBot.build(:buy_address, user_id: user.id, item_id: item.id)
       sleep 0.8
-    end
+     end
 
     context '商品の購入登録ができる時' do
       it 'user_id, item_id, postal_code, shipping_area_id, town, address, phone, tokenが存在すれば登録できること' do
